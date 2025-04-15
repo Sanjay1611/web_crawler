@@ -2,16 +2,20 @@ package pipelines
 
 import (
 	"context"
+	"sync"
 )
 
 type Stage interface {
 	Execute(ctx context.Context, in interface{}, out interface{})
 }
 
-// Concrete implementation with DAG
-
 type Pipeline interface {
 	Run(ctx context.Context)
+}
+
+type pipeline struct {
+	stages []Stage
+	wg     *sync.WaitGroup
 }
 
 // func (p *Pipeline) Run(ctx context.Context) {
