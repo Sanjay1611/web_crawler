@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - Downloading Package</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.d8f88553f45129cf8b8ede2a08aa6946f794f2db558c0ba5022c42f4c2ad0ff1.css" integrity="sha256-2PiFU/RRKc&#43;Ljt4qCKppRveU8ttVjAulAixC9MKtD/E=">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="downloads">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc">Documentation</a>
+        <ul >
+          <li>
+            <a href="/docs">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads" class="active">Downloads</a>
+        <ul class="expanded">
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+      <hr class="sidebar">
+      <div class="callout">
+  <p>The entire <strong><a href="/book">Pro Git book</a></strong> written
+  by Scott Chacon and Ben Straub is available to <a href="/book">read online for free</a>.
+  Dead tree versions are available on <a href="https://www.amazon.com/Pro-Git-Scott-Chacon/dp/1484200772?ie=UTF8&camp=1789&creative=9325&creativeASIN=1430218339&linkCode=as2&tag=git-sfconservancy-20">Amazon.com</a>.
+  </p>
+</div>
+
+    
+  </nav>
+</aside>
+
+        <div id="content" data-pagefind-filter="category:downloads" data-pagefind-weight="0.05" data-pagefind-body>
+          
+            
+<div id="main">
+  <h1>Download for Windows</h1>
+  <p>
+  <strong><a id="auto-download-link" href="https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe">Click here to download </a></strong>
+    the latest (<strong id="auto-download-version">2.49.0</strong>)
+    <strong id="auto-download-bitness">64-bit</strong> version of <strong>Git for Windows</strong>.
+    This is the most recent <a href="https://git-for-windows.github.io/">maintained build</a>.
+    It was released <span id="relative-release-date"></span>on <span id="auto-download-date">2025-03-17</span>.
+  </p>
+  <h3>Other Git for Windows downloads</h3>
+  <h4>Standalone Installer</h4>
+  <p>
+  <strong><a href="https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-32-bit.exe">32-bit Git for Windows Setup</a>.</strong>
+  </p>
+  <p>
+    <strong><a href="https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe">64-bit Git for Windows Setup</a>.</strong>
+  </p>
+  <h4>Portable ("thumbdrive edition")</h4>
+  <p>
+    <strong><a href="https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/PortableGit-2.48.1-32-bit.7z.exe">32-bit Git for Windows Portable</a>.</strong>
+  </p>
+  <p>
+    <strong><a href="https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/PortableGit-2.49.0-64-bit.7z.exe">64-bit Git for Windows Portable</a>.</strong>
+  </p>
+  <h4>Using winget tool</h4>
+  <p>
+    Install <a href="https://docs.microsoft.com/en-us/windows/package-manager/winget">winget tool</a> if you don't already have it, then type this command in command prompt or Powershell.<br>
+    <code>winget install --id Git.Git -e --source winget</code>
+  </p>
+  <p class="small">
+    The current source code release is version <strong>2.49.0</strong>.
+    If you want the newer version, you can build it from <a href="https://github.com/git-for-windows/git">the source code</a>.
+  </p>
+
+  <h2>Now What?</h2>
+  <p>
+    Now that you have downloaded Git, it's time to start using it.
+  </p>
+  <ul id="download-next-steps">
+    <li>
+      <a href="/book">
+      <img src="/images/icons/nav-read-book.png" />
+      <h3>Read the Book</h3>
+      <p>Dive into the Pro Git book and learn at your own pace.</p>
+      </a>
+    </li>
+    <li>
+      <a href="/downloads/guis">
+      <img src="/images/icons/nav-download-gui.png" />
+      <h3>Download a GUI</h3>
+      <p>Several free and commercial GUI tools are available for the Windows platform.</p>
+      </a>
+    </li>
+    <li>
+      <a href="/community">
+      <img src="/images/icons/nav-get-involved.png" />
+      <h3>Get Involved</h3>
+      <p>A knowledgeable Git community is available to answer your questions.</p>
+      </a>
+    </li>
+  </ul>
+</div>
+
+          
+        </div>
+      </div>
+      
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.585324c4b8476f735a3d7531c87f312475c0fac8c145bc4953c09e8a7569dcd4.js" integrity="sha256-WFMkxLhHb3NaPXUxyH8xJHXA&#43;sjBRbxJU8CeinVp3NQ="></script>
+
+    </div>
+  
+
+</body>
+</html>
+
