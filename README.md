@@ -17,7 +17,7 @@ cd web_crawler
 
 ### Build and Run the Repository
 ```bash
-go run main.go <path_to_csv_file_input>
+go run cmd/main.go <path_to_csv_file_input>
 ```
 
 ## Testing

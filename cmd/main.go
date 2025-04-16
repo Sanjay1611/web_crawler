@@ -21,7 +21,7 @@ func main() {
 	signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)
 
 	if len(os.Args) < 2 {
-		logrus.Fatal("Usage: go run main.go <path_to_csv>")
+		logrus.Fatal("Usage: go run cmd/main.go <path_to_csv>")
 	}
 
 	ctx, cancel := context.WithCancel(context.Background())
