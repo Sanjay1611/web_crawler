@@ -25,19 +25,15 @@ func main() {
 	}
 
 	ctx, cancel := context.WithCancel(context.Background())
-	// assuming os.Args[1] to be csv file path to be read
-	done := make(chan bool)
-	pipes := []pipelines.Pipeline{pipelines.NewCsvUrlFilePipeline(os.Args[1])}
-	pipelines.NewPipelineRunner(pipes).Run(ctx, done)
+	go gracefulShutdown(stop, cancel)
 
-	select {
-	case <-done:
-	case <-stop:
-		gracefulShutdown(cancel)
-	}
+	// assuming os.Args[1] to be csv file path to be read
+	pipes := []pipelines.Pipeline{pipelines.NewCsvUrlFilePipeline(os.Args[1])}
+	pipelines.NewPipelineRunner(pipes).Run(ctx)
 }
 
-func gracefulShutdown(cancel context.CancelFunc) {
+func gracefulShutdown(stop chan os.Signal, cancel context.CancelFunc) {
+	<-stop
 	logrus.Info("Interrupt received, initiating shutdown...")
 
 	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 5*time.Second)

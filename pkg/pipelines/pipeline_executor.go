@@ -17,8 +17,8 @@ func NewPipelineRunner(pipelines []Pipeline) *PipelineRunner {
 	}
 }
 
-func (pr *PipelineRunner) Run(ctx context.Context, stop chan<- bool) {
-	var wg *sync.WaitGroup
+func (pr *PipelineRunner) Run(ctx context.Context) {
+	var wg sync.WaitGroup
 
 	for _, pipeline := range pr.Pipelines {
 		wg.Add(1)
@@ -28,5 +28,4 @@ func (pr *PipelineRunner) Run(ctx context.Context, stop chan<- bool) {
 		}()
 	}
 	wg.Wait()
-	stop <- true
 }

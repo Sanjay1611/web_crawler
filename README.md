@@ -26,3 +26,6 @@ Run the unit tests using:
 ```bash
 go test ./...
 ```
+
+## Design
+![alt text](image.png)
